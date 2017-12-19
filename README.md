@@ -74,23 +74,7 @@ def DBSCAN_model_preview(data, labels, x_axis_name='', y_axis_name='', mode=None
 
 ```python
 def main():
-    arg_dict = {
-        "eps": .42,
-        "min_samples": 5
-    }
-    data = load_iris()
-    iris_data = pd.DataFrame(data.data, columns=data.feature_names)
-    
-    algo_input = alc.AlgoParam(algo_control={'mode': 'training', 'control_params': arg_dict},
-                               algo_data={'data': iris_data, 'label': None},
-                               algo_model={'model_params': None, 'model_instance': None})
-    in_algo = AlgoUtils.algo_factory('DBSCAN')
-    algo_output = in_algo.do_algo(algo_input)
-    model = algo_output.algo_model.model_instance
-    # labels predicted by DBSCAN
-    labels = model.labels_
-    x_axis_name = data.feature_names[0]
-    y_axis_name = data.feature_names[1]
+    do_something()
     # normal plot
     DBSCAN_model_preview(iris_data, labels, x_axis_name=x_axis_name, y_axis_name=y_axis_name)
     # PCA - 2D plot
